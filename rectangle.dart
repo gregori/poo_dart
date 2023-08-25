@@ -1,4 +1,6 @@
-class Rectangle {
+import 'shape.dart';
+
+class Rectangle extends Shape {
   double _length;
   double _width;
 
@@ -7,6 +9,12 @@ class Rectangle {
         _width = 1.0;
 
   Rectangle.withLengthWidth(this._length, this._width);
+  Rectangle.withLengthWidthColorFilled(
+    this._length,
+    this._width,
+    String color,
+    bool filled,
+  ) : super.withColorFilled(color, filled);
 
   double get length => _length;
   set length(double length) {
@@ -22,7 +30,8 @@ class Rectangle {
   double getPerimeter() => 2 * (length + width);
 
   @override
-  String toString() => 'Rectangle[length=$length,width=$width]';
+  String toString() =>
+      'Rectangle[${super.toString()},length=$length,width=$width]';
 }
 
 void main() {
