@@ -1,4 +1,8 @@
-class Shape {
+import 'circle.dart';
+import 'rectangle.dart';
+import 'square.dart';
+
+abstract class Shape {
   String _color;
   bool _filled;
 
@@ -18,6 +22,22 @@ class Shape {
     _filled = filled;
   }
 
+  double getArea();
+  double getPerimeter();
+
   @override
   String toString() => 'Shape[color=$color,filled=$filled]';
+}
+
+void main() {
+  List<Shape> shapeList = [
+    Circle(),
+    Circle.withRadius(2),
+    Rectangle.withLengthWidth(2, 3),
+    Square.withSide(4),
+  ];
+
+  for (var shape in shapeList) {
+    print('$shape, área: ${shape.getArea()}');
+  }
 }

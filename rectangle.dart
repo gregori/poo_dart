@@ -26,7 +26,9 @@ class Rectangle extends Shape {
     _width = width;
   }
 
+  @override
   double getArea() => length * width;
+  @override
   double getPerimeter() => 2 * (length + width);
 
   @override

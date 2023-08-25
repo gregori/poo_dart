@@ -18,8 +18,10 @@ class Circle extends Shape {
     this._radius = radius;
   }
 
+  @override
   double getArea() => pi * pow(radius, 2);
-  double getCircumference() => 2 * pi * radius;
+  @override
+  double getPerimeter() => 2 * pi * radius;
 
   @override
   String toString() => 'Circle[${super.toString()},radius=$radius]';
@@ -27,7 +29,7 @@ class Circle extends Shape {
 
 void main() {
   var c1 = Circle();
-  print('$c1, área: ${c1.getArea()}, circunferência: ${c1.getCircumference()}');
+  print('$c1, área: ${c1.getArea()}, circunferência: ${c1.getPerimeter()}');
   var c2 = Circle.withRadius(2.0);
   print('Círculo de raio ${c2.radius}');
   print(c2);
